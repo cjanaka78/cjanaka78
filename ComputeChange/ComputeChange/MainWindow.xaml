@@ -7,12 +7,12 @@
         <Label Content="Price:" Height="23" HorizontalAlignment="Left" Margin="0,21,0,0" Name="LabelPrice" VerticalAlignment="Top" Width="108" />
         <Label Content="Amt Tendered:" Height="28" HorizontalAlignment="Left" Margin="0,55,0,0" Name="labelAmtTendered" VerticalAlignment="Top" Width="108" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="102,21,0,0" Name="PriceTextBox" VerticalAlignment="Top" Width="120" TextInput="PriceTextBox_TextInput" TextChanged="PriceTextBox_TextChanged_1" IsEnabled="True" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="102,60,0,0" Name="AmttenderedTextBox" VerticalAlignment="Top" Width="120" TextChanged="AmttenderedTextBox_TextChanged" TextInput="AmttenderedTextBox_TextInput" />
-        <Label Content="Change:" Height="28" HorizontalAlignment="Left" Margin="0,89,0,0" Name="labelChange" VerticalAlignment="Top" Width="108" />
-        <Label Content="Quarters:" Height="28" HorizontalAlignment="Left" Margin="0,123,0,0" Name="labelQuarters" VerticalAlignment="Top" Width="108" />
-        <Label Content="Dimes:" Height="28" HorizontalAlignment="Left" Margin="0,157,0,0" Name="labelDimes" VerticalAlignment="Top" Width="108" />
-        <Label Content="Nickles:" Height="28" HorizontalAlignment="Left" Margin="0,191,0,0" Name="labelNickles" VerticalAlignment="Top" Width="108" />
-        <Label Content="Pennies:" Height="28" HorizontalAlignment="Left" Margin="0,225,0,0" Name="labelPennies" VerticalAlignment="Top" Width="108" />
-        <Button Content="Compute Change" Height="23" HorizontalAlignment="Left" Margin="281,21,0,0" Name="buttonComputeChange" VerticalAlignment="Top" Width="112" Click="buttonComputeChange_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="103,55,0,0" Name="AmttenderedTextBox" VerticalAlignment="Top" Width="120" TextChanged="AmttenderedTextBox_TextChanged" TextInput="AmttenderedTextBox_TextInput" />
+        <Label Content="Change:" Height="30" HorizontalAlignment="Left" Margin="2,89,0,0" Name="labelChange" VerticalAlignment="Top" Width="108" DataContext="{Binding ElementName=labelChange}" Target="{Binding}" />
+        <Label Content="Quarters:" Height="34" HorizontalAlignment="Left" Margin="2,125,0,0" Name="labelQuarters" VerticalAlignment="Top" Width="108" IsEnabled="{Binding}" />
+        <Label Content="Dimes:" Height="23" HorizontalAlignment="Left" Margin="2,158,0,0" Name="labelDimes" VerticalAlignment="Top" Width="106" />
+        <Label Content="Nickles:" Height="23" HorizontalAlignment="Left" Margin="2,196,0,0" Name="labelNickles" VerticalAlignment="Top" Width="106" />
+        <Label Content="Pennies:" Height="23" HorizontalAlignment="Left" Margin="2,233,0,0" Name="labelPennies" VerticalAlignment="Top" Width="108" />
+        <Button Content="Compute Change" Height="23" HorizontalAlignment="Left" Margin="281,21,0,0" Name="buttonComputeChange" VerticalAlignment="Top" Width="112" Click="buttonComputeChange_Click" IsDefault="True" />
     </Grid>
 </Window>
