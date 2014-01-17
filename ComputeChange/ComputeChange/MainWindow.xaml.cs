@@ -26,45 +26,66 @@ namespace WpfApplication1
 
         private void buttonComputeChange_Click(object sender, RoutedEventArgs e)
         {
-            float orginalAmount=0;
-            float price = 0;
-            float amtTendered = 0;
+            decimal price = 0;
+            decimal amtTendered = 0;
+            decimal change = 0;
+        
+            int numOfQuarters = 0;  //Number of Quarters in the Change 
+            int numOfDimes = 0;     //Number of Dimes in the Change  
+            int numOfNickels = 0;   //Number of Nickes in the Change
+            int numOfPennies = 0;   //Number of Pennies in the Change 
 
-            price = Single.Parse(PriceTextBox.Text);
+            //String result = "" ;
+
+            //Converts the text input of the Price to decimal and stores in the price variable
+            price = Decimal.Parse(PriceTextBox.Text);
+       
             //MessageBox.Show(PriceTextBox.Text);
 
-
-            amtTendered = Single.Parse(AmttenderedTextBox.Text);
+            //Converts the text input of the amtTendered  to decimal and stores in the amtTendered  variable
+            amtTendered = Decimal.Parse(AmttenderedTextBox.Text);
             //MessageBox.Show(AmttenderedTextBox.Text);
 
-            orginalAmount =(amtTendered - price) * 100;
-            int amount =0;
 
-            MessageBox.Show("OriginalAmt: " + orginalAmount);
-                     
-            amount = (int)orginalAmount / 25;
+            //Calculates the change 
+            change = (amtTendered - price) * 100;
 
-            MessageBox.Show("Number of Quarters: " + amount);
+           // result = this.ToString(change);
+            
 
-            amount = ((int)orginalAmount % 25 /10);
-            MessageBox.Show("Number of Dimes: " + amount);
+            MessageBox.Show("Change in Cents: " + Convert.ToInt32(change));
 
+            //Calculates the number of Quarters
+            numOfQuarters = Convert.ToInt32(change) / 25;
 
-            amount = ((((int)orginalAmount % 25 )% 10)/5);
-            MessageBox.Show("Number of Nickles: " + amount);
+            MessageBox.Show("Number of Quarters: " + numOfQuarters.ToString());
 
-            amount = ((((int)orginalAmount % 25) % 10) % 5);
-            MessageBox.Show("Number of Pennies: " + amount);
+            //Calculates the number of dimes
+            numOfDimes = ((int)change % 25 / 10);
+            MessageBox.Show("Number of Dimes: " + numOfDimes);
+
+            //Calculates the number of Nickels
+            numOfNickels = ((((int)change % 25) % 10) / 5);
+            MessageBox.Show("Number of Nickles: " + numOfNickels);
+
+            //Calculates the number of Pennies
+            numOfPennies = ((((int)change % 25) % 10) % 5);
+            MessageBox.Show("Number of Pennies: " + numOfPennies);
 
 
            
    
             
-           // orginalAmount = Single.Parse(price.Text);
+           // change = Single.Parse(price.Text);
 
             //Console.WriteLine(orginalAmount);
            // MessageBox.Show("The Original Price of " + orginalAmount.Text + " is equivalent to " + orginalAmount);
 
+        }
+
+        private string ToString(decimal change)
+        {
+            throw new NotImplementedException();
         }
 
         private void PriceTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -90,6 +111,16 @@ namespace WpfApplication1
         private void AmttenderedTextBox_TextInput(object sender, TextCompositionEventArgs e)
         {
            
+        }
+
+        private void textBox2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           
+        }
+
+        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
         }
     }
 }
