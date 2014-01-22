@@ -14,5 +14,10 @@
         <Label Content="Nickles:" Height="23" HorizontalAlignment="Left" Margin="2,196,0,0" Name="labelNickles" VerticalAlignment="Top" Width="106" />
         <Label Content="Pennies:" Height="23" HorizontalAlignment="Left" Margin="2,233,0,0" Name="labelPennies" VerticalAlignment="Top" Width="108" />
         <Button Content="Compute Change" Height="23" HorizontalAlignment="Left" Margin="281,21,0,0" Name="buttonComputeChange" VerticalAlignment="Top" Width="112" Click="buttonComputeChange_Click" IsDefault="True" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="102,89,0,0" Name="textBlockChange" Text="" VerticalAlignment="Top" Width="121" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="102,125,0,0" Name="textBlockNumQuarters" Text="" VerticalAlignment="Top" Width="120" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="102,158,0,0" Name="textBlockNumDimes" Text="" VerticalAlignment="Top" Width="120" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="102,196,0,0" Name="textBlockNumNickles" Text="" VerticalAlignment="Top" Width="118" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="102,233,0,0" Name="textBlockNumPennies" Text="" VerticalAlignment="Top" Width="118" />
     </Grid>
 </Window>
