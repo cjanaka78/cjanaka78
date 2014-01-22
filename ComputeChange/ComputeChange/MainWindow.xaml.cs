@@ -42,9 +42,7 @@ namespace WpfApplication1
       
             //Converts the text input of the amtTendered  to decimal and stores in the amtTendered  variable
             amtTendered = Decimal.Parse(AmttenderedTextBox.Text);
-            //MessageBox.Show(AmttenderedTextBox.Text);
-
-
+     
             //error checking for negative price
             if ((price < 0) )
             {
