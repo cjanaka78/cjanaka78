@@ -36,13 +36,26 @@ namespace WpfApplication1
             int numOfNickels = 0;   //Number of Nickes in the Change
             int numOfPennies = 0;   //Number of Pennies in the Change 
 
-          
-            //Converts the text input of the Price to decimal and stores in the price variable 
+            try
+            {
+               //Converts the text input of the Price to decimal and stores in the price variable 
                 price = Decimal.Parse(PriceTextBox.Text);
-      
+           
+
             //Converts the text input of the amtTendered  to decimal and stores in the amtTendered  variable
             amtTendered = Decimal.Parse(AmttenderedTextBox.Text);
-     
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(" Error Message:\n " + error.ToString());
+                textBlockChange.Text = "";
+                textBlockNumQuarters.Text= "";
+                textBlockNumDimes.Text= "";
+                textBlockNumNickles.Text= "";
+                textBlockNumPennies.Text = "";
+
+            }
             //error checking for negative price
             if ((price < 0) )
             {
@@ -91,8 +104,8 @@ namespace WpfApplication1
                 textBlockNumPennies.Text = numOfPennies.ToString();
 
             }
-         
 
+           
         }
 
         private string ToString(decimal change)
