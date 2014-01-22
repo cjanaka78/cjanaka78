@@ -19,6 +19,7 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
+       
         public MainWindow()
         {
             InitializeComponent();
@@ -35,51 +36,64 @@ namespace WpfApplication1
             int numOfNickels = 0;   //Number of Nickes in the Change
             int numOfPennies = 0;   //Number of Pennies in the Change 
 
-            //String result = "" ;
-
-            //Converts the text input of the Price to decimal and stores in the price variable
-            price = Decimal.Parse(PriceTextBox.Text);
-       
-            //MessageBox.Show(PriceTextBox.Text);
-
+          
+            //Converts the text input of the Price to decimal and stores in the price variable 
+                price = Decimal.Parse(PriceTextBox.Text);
+      
             //Converts the text input of the amtTendered  to decimal and stores in the amtTendered  variable
             amtTendered = Decimal.Parse(AmttenderedTextBox.Text);
             //MessageBox.Show(AmttenderedTextBox.Text);
 
 
-            //Calculates the change 
-            change = (amtTendered - price) * 100;
+            //error checking for negative price
+            if ((price < 0) )
+            {
+                MessageBox.Show("price cannot be a negative");
+            }
 
-           // result = this.ToString(change);
+            //error checking for negative amount tendered
+            if ((amtTendered < 0))
+            {
+                MessageBox.Show("Amount Tendered cannot be a negative");
+            }
             
-
-            MessageBox.Show("Change in Cents: " + Convert.ToInt32(change));
-
-            //Calculates the number of Quarters
-            numOfQuarters = Convert.ToInt32(change) / 25;
-
-            MessageBox.Show("Number of Quarters: " + numOfQuarters.ToString());
-
-            //Calculates the number of dimes
-            numOfDimes = ((int)change % 25 / 10);
-            MessageBox.Show("Number of Dimes: " + numOfDimes);
-
-            //Calculates the number of Nickels
-            numOfNickels = ((((int)change % 25) % 10) / 5);
-            MessageBox.Show("Number of Nickles: " + numOfNickels);
-
-            //Calculates the number of Pennies
-            numOfPennies = ((((int)change % 25) % 10) % 5);
-            MessageBox.Show("Number of Pennies: " + numOfPennies);
+            if((price>0) && (amtTendered> 0))
+            {
+                //Calculates the change 
+                change = (amtTendered - price) * 100;
 
 
-           
-   
-            
-           // change = Single.Parse(price.Text);
+                //prints the Change amount onto the app screen
+                textBlockChange.Text = ((int)change).ToString() + " Cents";
 
-            //Console.WriteLine(orginalAmount);
-           // MessageBox.Show("The Original Price of " + orginalAmount.Text + " is equivalent to " + orginalAmount);
+
+                //Calculates the number of Quarters
+                numOfQuarters = Convert.ToInt32(change) / 25;
+
+                //prints the number of quarters onto the app screen
+                textBlockNumQuarters.Text = numOfQuarters.ToString();
+
+
+                //Calculates the number of dimes
+                numOfDimes = ((int)change % 25 / 10);
+
+                //prints the number of dimes onto the app screen
+                textBlockNumDimes.Text = numOfDimes.ToString();
+
+                //Calculates the number of Nickels
+                numOfNickels = ((((int)change % 25) % 10) / 5);
+
+                //prints the number of nickles onto the app screen
+                textBlockNumNickles.Text = numOfNickels.ToString();
+
+                //Calculates the number of Pennies
+                numOfPennies = ((((int)change % 25) % 10) % 5);
+
+                //prints the number of pennies onto the app screen
+                textBlockNumPennies.Text = numOfPennies.ToString();
+
+            }
+         
 
         }
 
