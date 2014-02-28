@@ -23,5 +23,25 @@ namespace WpfApplication1
         {
             InitializeComponent();
         }
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void NumberOfRollstextBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
